@@ -1,6 +1,7 @@
 import UIKit
 import Foundation
 
+/*
 var numbers = [1,7,13,4,5]
 
 print("sorted nums: \(numbers.sorted())")
@@ -43,5 +44,14 @@ func testMainQueueDeadlock() {
         }
     }
 }
+*/
 
+
+isPolindrome("ayak")
+
+
+func isPolindrome(_ input: String) -> Bool {
+    let lowerCasedInput = input.lowercased()
+    return lowerCasedInput == String(lowerCasedInput.reversed())
+}
 
