@@ -53,7 +53,6 @@ func isPolindrome(_ input: String) -> Bool {
     return lowerCasedInput == String(lowerCasedInput.reversed())
 }
 
-*/
 
 fibonacci(6)
 
@@ -63,4 +62,15 @@ func fibonacci(_ n: Int) -> Int {
     }
     
     return fibonacci(n - 1) + fibonacci(n - 2)
+}
+*/
+
+isAnagram(string1: "listen", string2: "silent")
+
+func isAnagram(string1: String, string2: String) -> Bool {
+    guard string1.count == string2.count else {
+        return false
+    }
+    
+    return string1.sorted() == string2.sorted()
 }
