@@ -63,7 +63,6 @@ func fibonacci(_ n: Int) -> Int {
     
     return fibonacci(n - 1) + fibonacci(n - 2)
 }
-*/
 
 isAnagram(string1: "listen", string2: "silent")
 
@@ -73,4 +72,44 @@ func isAnagram(string1: String, string2: String) -> Bool {
     }
     
     return string1.sorted() == string2.sorted()
+}
+*/
+
+mostFrequentCharacter(word: "aaaarrry")
+
+func mostFrequentCharacter(word: String) -> Character? {
+    
+    //Long way
+    /*
+    var dictWord : [String : Int] = [:]
+    var maxNum = 0
+    var maxChar = ""
+    for char in word {
+        if let count = dictWord[String(char)] {
+            dictWord[String(char)] = count + 1
+        } else {
+            dictWord[String(char)] = 1
+        }
+    }
+    
+    for (char, value) in dictWord {
+        if value > maxNum {
+            maxNum = value
+            maxChar = char
+        }
+    }
+    
+    return Character(maxChar)
+    */
+     
+    
+    //Short Way
+    var frequency: [Character: Int] = [:]
+    
+    for char in word {
+        frequency[char, default: 0] += 1
+    }
+    
+    return frequency.max(by: { $0.value < $1.value})?.key
+    
 }
