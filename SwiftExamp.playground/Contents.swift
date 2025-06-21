@@ -114,7 +114,6 @@ func mostFrequentCharacter(word: String) -> Character? {
     
 }
 
-*/
 
 targetSum(arr: [2, 4, 11, 15, 17], target: 19)
 
@@ -131,3 +130,24 @@ func targetSum(arr: [Int], target: Int) -> [Int]? {
     }
     return nil
 }
+*/
+
+//Map
+
+let nums = [1,2,3,4,5]
+
+let squaredNums = nums.map { $0 * $0 }
+
+print(squaredNums)
+
+
+struct User {
+    let id: Int
+    let name: String
+}
+
+let users = [User(id: 1, name: "Ahmet"), User(id: 2, name: "Zeynep"), User(id: 3, name: "Mahmut")]
+
+let names = users.map { $0.name }
+
+print("names: \(names)")
