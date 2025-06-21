@@ -73,7 +73,7 @@ func isAnagram(string1: String, string2: String) -> Bool {
     
     return string1.sorted() == string2.sorted()
 }
-*/
+
 
 mostFrequentCharacter(word: "aaaarrry")
 
@@ -112,4 +112,22 @@ func mostFrequentCharacter(word: String) -> Character? {
     
     return frequency.max(by: { $0.value < $1.value})?.key
     
+}
+
+*/
+
+targetSum(arr: [2, 4, 11, 15, 17], target: 19)
+
+func targetSum(arr: [Int], target: Int) -> [Int]? {
+    
+    var map: [Int: Int] = [:]
+    
+    for (index, value) in arr.enumerated() {
+        let complement = target - value
+        if let matchIndex = map[complement] {
+            return [matchIndex, index]
+        }
+        map[value] = index
+    }
+    return nil
 }
