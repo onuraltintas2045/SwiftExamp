@@ -130,7 +130,7 @@ func targetSum(arr: [Int], target: Int) -> [Int]? {
     }
     return nil
 }
-*/
+
 
 //Map
 
@@ -151,3 +151,14 @@ let users = [User(id: 1, name: "Ahmet"), User(id: 2, name: "Zeynep"), User(id: 3
 let names = users.map { $0.name }
 
 print("names: \(names)")
+
+*/
+
+var nums = [1,2,3,4,5]
+
+filterNums(nums: nums)
+
+func filterNums(nums: [Int]) -> [Int] {
+    let filteredNums = nums.filter( { $0 % 2 == 1})
+    return filteredNums
+}
