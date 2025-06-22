@@ -152,7 +152,7 @@ let names = users.map { $0.name }
 
 print("names: \(names)")
 
-*/
+
 
 var nums = [1,2,3,4,5]
 
@@ -162,3 +162,15 @@ func filterNums(nums: [Int]) -> [Int] {
     let filteredNums = nums.filter( { $0 % 2 == 1})
     return filteredNums
 }
+
+
+var str = "   T  e  s  t  "
+filterSpaces(str: str)
+
+func filterSpaces(str: String) -> String {
+    let filteredString = str.filter ( { $0 != " " } )
+    return filteredString
+}
+*/
+
+
