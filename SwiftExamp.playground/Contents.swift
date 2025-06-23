@@ -16,6 +16,7 @@ DispatchQueue.main.sync {
     print("deadlock")
 }
 
+ //Deadlock
 func testSerialQueueDeadlock() {
     let serialQueue = DispatchQueue(label: "serialQueue")
 
@@ -27,6 +28,7 @@ func testSerialQueueDeadlock() {
     }
 }
 
+ //DeadLock olmaz çünkü globalQueue farklı threadlere gönderir. Teorik olarak mümkün ama çalışır.
 func testGlobalQueueDeadlock() {
     DispatchQueue.global().async {
         print("global async 1")
@@ -35,7 +37,8 @@ func testGlobalQueueDeadlock() {
         }
     }
 }
-
+ 
+ //DeadLock
 func testMainQueueDeadlock() {
     DispatchQueue.main.async {
         print("main async 1")
@@ -194,7 +197,7 @@ func prefStr(str: String) -> String {
     return strFirst.uppercased() + str.dropFirst()
 }
 
-*/
+
 
 //Reduce
 let number = [1, 2, 3, 4, 5]
@@ -224,4 +227,19 @@ let maxScore = scores.reduce(scores.first ?? 0) { max($0, $1) }
 
 print(maxScore)
 
+*/
 
+
+let inputs = ["2", "abc", "3", "asd", "5"]
+let validInputs = inputs.compactMap { Int($0) }
+print(validInputs)
+
+let items = ["I", nil, "want", nil, "iOS", nil, "Developer", "Job", nil]
+let nonNilItems = items.compactMap { $0 }
+print(nonNilItems.joined(separator: " "))
+
+let dates = ["2025-06-23", "unknown", "2024-07-12", "invalid date", "2025-20-06", "1997.02.26"]
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+let validDates: [Date] = dates.compactMap { formatter.date(from: $0) }
+print(validDates)
