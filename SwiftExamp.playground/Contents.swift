@@ -173,4 +173,12 @@ func filterSpaces(str: String) -> String {
 }
 */
 
+var str = "professional"
 
+prefStr(str: str)
+
+func prefStr(str: String) -> String {
+    guard let strFirst = str.first else { return str }
+    
+    return strFirst.uppercased() + str.dropFirst()
+}
