@@ -44,6 +44,8 @@ func testMainQueueDeadlock() {
         }
     }
 }
+ 
+ //Polindrome
 
 isPolindrome("ayak")
 
@@ -53,6 +55,8 @@ func isPolindrome(_ input: String) -> Bool {
     return lowerCasedInput == String(lowerCasedInput.reversed())
 }
 
+ 
+ //Fibonacci
 
 fibonacci(6)
 
@@ -74,6 +78,7 @@ func isAnagram(string1: String, string2: String) -> Bool {
     return string1.sorted() == string2.sorted()
 }
 
+ //Most Frequent
 
 mostFrequentCharacter(word: "aaaarrry")
 
@@ -114,6 +119,7 @@ func mostFrequentCharacter(word: String) -> Character? {
     
 }
 
+ // Target Sum
 
 targetSum(arr: [2, 4, 11, 15, 17], target: 19)
 
@@ -152,7 +158,7 @@ let names = users.map { $0.name }
 
 print("names: \(names)")
 
-
+// filter Odd numbers
 
 var nums = [1,2,3,4,5]
 
@@ -163,16 +169,21 @@ func filterNums(nums: [Int]) -> [Int] {
     return filteredNums
 }
 
-
+// Filter space character
 var str = "   T  e  s  t  "
-filterSpaces(str: str)
+filterSpacesEasyWay(str: str)
 
 func filterSpaces(str: String) -> String {
     let filteredString = str.filter ( { $0 != " " } )
     return filteredString
 }
-*/
+ 
+func filterSpacesEasyWay(str: String) -> String {
+    let replaceStr = str.replacingOccurrences(of: " ", with: "")
+    return replaceStr
+}
 
+//First String Uppercase
 var str = "professional"
 
 prefStr(str: str)
@@ -182,3 +193,35 @@ func prefStr(str: String) -> String {
     
     return strFirst.uppercased() + str.dropFirst()
 }
+
+*/
+
+//Reduce
+let number = [1, 2, 3, 4, 5]
+
+let reducedNumber = number.reduce(0, +)
+
+print(reducedNumber)
+
+
+let values = [2, 3, 4]
+
+let multiplyValues = values.reduce(1) { $0 * $1 }
+
+print(multiplyValues)
+
+let words = ["Junior", "iOS", "Developer"]
+
+let reducedWords = words.reduce("") { $0 + " " + $1 }.trimmingCharacters(in: .whitespaces)
+
+let resultOfWords = words.joined(separator: " ")
+
+print("first way = \(reducedWords), second way = \(resultOfWords)")
+
+let scores = [25, 75, 40]
+
+let maxScore = scores.reduce(scores.first ?? 0) { max($0, $1) }
+
+print(maxScore)
+
+
